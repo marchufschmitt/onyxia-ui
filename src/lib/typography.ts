@@ -134,8 +134,8 @@ export const defaultGetTypographyDesc: GetTypographyDesc<never> = ({
 
                 if (windowInnerWidth >= breakpointsValues.lg) {
                     return {
-                        "fontSizeRem": 1.75,
-                        "lineHeightRem": 2.25,
+                        "fontSizeRem": 1.5,
+                        "lineHeightRem": 2,
                     };
                 }
 
@@ -158,8 +158,8 @@ export const defaultGetTypographyDesc: GetTypographyDesc<never> = ({
 
                 if (windowInnerWidth >= breakpointsValues.lg) {
                     return {
-                        "fontSizeRem": 1.5,
-                        "lineHeightRem": 2,
+                        "fontSizeRem": 1.25,
+                        "lineHeightRem": 1.7,
                     };
                 }
 
@@ -182,8 +182,8 @@ export const defaultGetTypographyDesc: GetTypographyDesc<never> = ({
 
                 if (windowInnerWidth >= breakpointsValues.lg) {
                     return {
-                        "fontSizeRem": 1.25,
-                        "lineHeightRem": 1.7,
+                        "fontSizeRem": 1.125,
+                        "lineHeightRem": 1.25,
                     };
                 }
 
@@ -206,8 +206,8 @@ export const defaultGetTypographyDesc: GetTypographyDesc<never> = ({
 
                 if (windowInnerWidth >= breakpointsValues.lg) {
                     return {
-                        "fontSizeRem": 1.125,
-                        "lineHeightRem": 1.25,
+                        "fontSizeRem": 1,
+                        "lineHeightRem": 1.475,
                     };
                 }
 
@@ -230,8 +230,8 @@ export const defaultGetTypographyDesc: GetTypographyDesc<never> = ({
 
                 if (windowInnerWidth >= breakpointsValues.lg) {
                     return {
-                        "fontSizeRem": 1.125,
-                        "lineHeightRem": 1.25,
+                        "fontSizeRem": 1,
+                        "lineHeightRem": 1.475,
                     };
                 }
 
