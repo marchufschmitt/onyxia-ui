@@ -34,13 +34,14 @@ export declare namespace TypographyDesc {
 
     export type VariantNameBase =
         | "display heading"
+        | "hero heading"
         | "page heading"
         | "subtitle"
         | "section heading"
         | "object heading"
+        | "navigation label"
         | "label 1"
         | "label 2"
-        | "navigation label"
         | "body 1"
         | "body 2"
         | "caption";
@@ -97,8 +98,31 @@ export const defaultGetTypographyDesc: GetTypographyDesc<never> = ({
     "fontFamily": "sans-serif",
     "rootFontSizePx": 16 * browserFontSizeFactor,
     "variants": {
-        "display heading": {
+          "hero heading": {
             "htmlComponent": "h1",
+            "fontWeight": id<TypographyDesc.FontWeightProperty>("bold"),
+            ...(() => {
+                if (windowInnerWidth >= breakpointsValues.xl) {
+                    return {
+                        "fontSizeRem": 5.375,
+                        "lineHeightRem": 5.25,
+                    };
+                }
+                if (windowInnerWidth >= breakpointsValues.lg) {
+                    return {
+                        "fontSizeRem": 3.25,
+                        "lineHeightRem": 3.75,
+                    };
+                }
+                return {
+                    "fontSizeRem": 2.8,
+                    "lineHeightRem": 3.25,
+                };
+            })(),
+        },
+        
+        "display heading": {
+            "htmlComponent": "h2",
             "fontWeight": id<TypographyDesc.FontWeightProperty>("bold"),
             ...(() => {
                 if (windowInnerWidth >= breakpointsValues.xl) {
@@ -122,7 +146,7 @@ export const defaultGetTypographyDesc: GetTypographyDesc<never> = ({
             })(),
         },
         "page heading": {
-            "htmlComponent": "h2",
+            "htmlComponent": "h3",
             "fontWeight": id<TypographyDesc.FontWeightProperty>("bold"),
             ...(() => {
                 if (windowInnerWidth >= breakpointsValues.xl) {
@@ -146,7 +170,7 @@ export const defaultGetTypographyDesc: GetTypographyDesc<never> = ({
             })(),
         },
         "subtitle": {
-            "htmlComponent": "h3",
+            "htmlComponent": "h4",
             "fontWeight": id<TypographyDesc.FontWeightProperty>("normal"),
             ...(() => {
                 if (windowInnerWidth >= breakpointsValues.xl) {
@@ -170,7 +194,7 @@ export const defaultGetTypographyDesc: GetTypographyDesc<never> = ({
             })(),
         },
         "section heading": {
-            "htmlComponent": "h4",
+            "htmlComponent": "h5",
             "fontWeight": id<TypographyDesc.FontWeightProperty>("bold"),
             ...(() => {
                 if (windowInnerWidth >= breakpointsValues.xl) {
@@ -194,7 +218,7 @@ export const defaultGetTypographyDesc: GetTypographyDesc<never> = ({
             })(),
         },
         "object heading": {
-            "htmlComponent": "h5",
+            "htmlComponent": "h6",
             "fontWeight": id<TypographyDesc.FontWeightProperty>(600),
             ...(() => {
                 if (windowInnerWidth >= breakpointsValues.xl) {
@@ -218,7 +242,7 @@ export const defaultGetTypographyDesc: GetTypographyDesc<never> = ({
             })(),
         },
         "navigation label": {
-            "htmlComponent": "h5",
+            "htmlComponent": "h6",
             "fontWeight": id<TypographyDesc.FontWeightProperty>(500),
             ...(() => {
                 if (windowInnerWidth >= breakpointsValues.xl) {
@@ -242,7 +266,7 @@ export const defaultGetTypographyDesc: GetTypographyDesc<never> = ({
             })(),
         },
         "label 1": {
-            "htmlComponent": "h6",
+            "htmlComponent": "span",
             "fontWeight": id<TypographyDesc.FontWeightProperty>(500),
             ...(() => {
                 if (windowInnerWidth >= breakpointsValues.xl) {
@@ -266,7 +290,7 @@ export const defaultGetTypographyDesc: GetTypographyDesc<never> = ({
             })(),
         },
         "label 2": {
-            "htmlComponent": "h6",
+            "htmlComponent": "span",
             "fontWeight": id<TypographyDesc.FontWeightProperty>(500),
             ...(() => {
                 if (windowInnerWidth >= breakpointsValues.xl) {
@@ -447,17 +471,17 @@ export const { createMuiTypographyOptions, getComputedTypography } = (() => {
             "fontWeightRegular": "normal",
             "fontWeightMedium": 500,
             "h1": getTypographyVariantStyle({
-                "variantName": "display heading",
-            }),
-            "h2": getTypographyVariantStyle({ "variantName": "page heading" }),
-            "h3": getTypographyVariantStyle({ "variantName": "subtitle" }),
-            "h4": getTypographyVariantStyle({
+                "variantName": "hero heading"}),
+            "h2": getTypographyVariantStyle({ "variantName": "display heading" }),
+            "h3": getTypographyVariantStyle({ "variantName": "page heading" }),
+            "h4": getTypographyVariantStyle({ "variantName": "subtitle" }),
+            "h5": getTypographyVariantStyle({
                 "variantName": "section heading",
             }),
-            "h5": getTypographyVariantStyle({
+            "h6": getTypographyVariantStyle({
                 "variantName": "object heading",
             }),
-            "h6": getTypographyVariantStyle({
+            "h7": getTypographyVariantStyle({
                 "variantName": "navigation label",
             }),
             "subtitle1": getTypographyVariantStyle({
